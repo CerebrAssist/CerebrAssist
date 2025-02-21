@@ -10,67 +10,9 @@ let cerebrasClient = null;
 
 let conversationHistory = [];
 
-let storedApiKey = localStorage.getItem("cerebrasApiKey") || "";
+let storedApiKey = "csk-x836edmhrreyymxyyh4np8tdp9jdnkkyen326ervwrxh6k6w";
 
-if (storedApiKey) {
-
-    initClient(storedApiKey);
-
-} else {
-
-    createApiKeyModal();
-
-}
-
-function createApiKeyModal() {
-
-    const modal = document.createElement('div');
-
-    modal.id = 'apiKeyModal';
-
-    modal.className = 'modal';
-
-    const modalContent = document.createElement('div');
-
-    modalContent.className = 'modalContent';
-
-    const input = document.createElement('input');
-
-    input.id = 'apiKeyInput';
-
-    input.type = 'password';
-
-    input.placeholder = 'Cerebras API Key';
-
-    input.addEventListener('keydown', (e) => {
-
-        if (e.key === 'Enter') {
-
-            e.preventDefault();
-
-            const apiKey = input.value.trim();
-
-            if (!apiKey) return;
-
-            localStorage.setItem("cerebrasApiKey", apiKey);
-
-            storedApiKey = apiKey;
-
-            initClient(storedApiKey);
-
-            document.body.removeChild(modal);
-
-        }
-
-    });
-
-    modalContent.appendChild(input);
-
-    modal.appendChild(modalContent);
-
-    document.body.appendChild(modal);
-
-}
+initClient(storedApiKey);
 
 function initClient(apiKey) {
 
