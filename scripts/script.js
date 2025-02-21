@@ -6,10 +6,6 @@ const messagesDiv = document.getElementById('messages');
 
 const userInput = document.getElementById('userInput');
 
-const apiKeyModal = document.getElementById('apiKeyModal');
-
-const apiKeyInput = document.getElementById('apiKeyInput');
-
 let cerebrasClient = null;
 
 let conversationHistory = [];
@@ -20,19 +16,59 @@ if (storedApiKey) {
 
     initClient(storedApiKey);
 
-    apiKeyModal.style.display = 'none';
-
 } else {
 
-    apiKeyModal.style.display = 'flex';
+    createApiKeyModal();
 
 }
 
-function parseMarkdown(text) {
+function createApiKeyModal() {
 
-    const rawHTML = marked(text);
+    const modal = document.createElement('div');
 
-    return dompurify.sanitize(rawHTML);
+    modal.id = 'apiKeyModal';
+
+    modal.className = 'modal';
+
+    const modalContent = document.createElement('div');
+
+    modalContent.className = 'modalContent';
+
+    const input = document.createElement('input');
+
+    input.id = 'apiKeyInput';
+
+    input.type = 'password';
+
+    input.placeholder = 'Cerebras API Key';
+
+    input.addEventListener('keydown', (e) => {
+
+        if (e.key === 'Enter') {
+
+            e.preventDefault();
+
+            const apiKey = input.value.trim();
+
+            if (!apiKey) return;
+
+            localStorage.setItem("cerebrasApiKey", apiKey);
+
+            storedApiKey = apiKey;
+
+            initClient(storedApiKey);
+
+            document.body.removeChild(modal);
+
+        }
+
+    });
+
+    modalContent.appendChild(input);
+
+    modal.appendChild(modalContent);
+
+    document.body.appendChild(modal);
 
 }
 
@@ -47,6 +83,14 @@ function initClient(apiKey) {
     cerebrasClient = new Cerebras({ apiKey });
 
     return cerebrasClient;
+
+}
+
+function parseMarkdown(text) {
+
+    const rawHTML = marked(text);
+
+    return dompurify.sanitize(rawHTML);
 
 }
 
@@ -137,32 +181,6 @@ userInput.addEventListener('keydown', (e) => {
         e.preventDefault();
 
         sendMessage();
-
-    }
-
-});
-
-apiKeyInput.addEventListener('keydown', (e) => {
-
-    if (e.key === 'Enter') {
-
-        e.preventDefault();
-
-        const apiKey = apiKeyInput.value.trim();
-
-        if (apiKey === "") {
-
-            return;
-
-        }
-
-        localStorage.setItem("cerebrasApiKey", apiKey);
-
-        storedApiKey = apiKey;
-
-        initClient(storedApiKey);
-
-        apiKeyModal.style.display = 'none';
 
     }
 
