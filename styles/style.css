@@ -46,7 +46,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 18px;
-    padding: 8px 12px;
     border-radius: 12px;
 }
 
@@ -57,6 +56,7 @@ main {
     max-width: 80%;
     width: fit-content;
     margin-left: auto;
+    padding: 8px 12px;
     background-color: #E9ECEF;
 }
 
@@ -113,14 +113,6 @@ code {
 
 ul, ol {
     list-style-position: inside;
-}
-
-a {
-    color: #e63946;
-}
-
-a:hover {
-    color: rgba(230, 57, 70, 0.6);
 }
 
 /* ----- RESPONSIVE ----- */
