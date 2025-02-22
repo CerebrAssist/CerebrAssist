@@ -79,6 +79,7 @@ footer {
 
 .inputContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -145,6 +146,11 @@ a:hover {
 
     .inputContainer {
         border-radius: 12px 12px 0 0;
+    }
+
+    .mobileAppGap {
+        width: 100%;
+        height: 22px;
     }
 
 }
