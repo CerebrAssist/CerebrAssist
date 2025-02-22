@@ -7,7 +7,6 @@ body {
     height: 100vh;
     padding: 0 8px 8px 8px;
     overflow-wrap: anywhere;
-    overflow: hidden;
     color: #212529;
     background-color: #F8F9FA;
     font-family: 'Inter', sans-serif;
