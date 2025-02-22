@@ -119,6 +119,10 @@ ul, ol {
 
 @media (max-width: 766px) {
 
+    body {
+        padding: 0;
+    }
+
     header {
         width: 100%;
     }
