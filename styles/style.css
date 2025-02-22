@@ -135,6 +135,10 @@ ul, ol {
         width: 100%;
     }
 
+    .inputContainer {
+        border-radius: 12px 12px 0 0;
+    }
+
 }
 
 /* ----- COLOR THEME ----- */
