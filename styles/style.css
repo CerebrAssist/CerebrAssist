@@ -48,7 +48,6 @@ main {
     gap: 18px;
     padding: 8px 12px;
     border-radius: 12px;
-    animation: fadeInDown 1s ease-out forwards;
 }
 
 .user {
@@ -124,24 +123,6 @@ a:hover {
     color: rgba(230, 57, 70, 0.6);
 }
 
-/* ----- ANIMATIONS ----- */
-
-@keyframes fadeInDown {
-
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    100% {
-        opacity: 1;
-    }
-
-}
-
 /* ----- RESPONSIVE ----- */
 
 @media (max-width: 766px) {
@@ -159,6 +140,8 @@ a:hover {
     }
 
 }
+
+/* ----- COLOR THEME ----- */
 
 @media (prefers-color-scheme: dark) {
 
