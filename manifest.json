@@ -3,8 +3,6 @@
   "short_name": "CerebrAssist",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "red",
-  "theme_color": "green",
   "icons": [
     {
       "src": "assets/192x192.png",

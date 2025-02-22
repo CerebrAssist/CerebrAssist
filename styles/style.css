@@ -127,6 +127,10 @@ a:hover {
 
 @media (max-width: 766px) {
 
+    body {
+        padding: 0;
+    }
+
     header {
         width: 100%;
     }
@@ -137,6 +141,10 @@ a:hover {
 
     footer {
         width: 100%;
+    }
+
+    .inputContainer {
+        border-radius: 12px 12px 0 0;
     }
 
 }
