@@ -2,11 +2,13 @@ import { marked } from 'https://cdn.jsdelivr.net/npm/marked@15.0.7/+esm'
 import dompurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.2.4/+esm'
 import Cerebras from 'https://cdn.jsdelivr.net/npm/@cerebras/cerebras_cloud_sdk/+esm';
 
-const deleteChatDiv = document.getElementById("deleteChat");
+const deleteChat = document.getElementById("deleteChat");
 
 const messagesContainer = document.getElementById('messagesContainer');
 
 const userInput = document.getElementById('userInput');
+
+const sendButton = document.getElementById('sendButton');
 
 let cerebrasClient = null;
 
@@ -130,6 +132,8 @@ userInput.addEventListener('keydown', (e) => {
 
 });
 
+sendButton.addEventListener('click', sendMessage);
+
 if ('serviceWorker' in navigator) {
 
     window.addEventListener('load', () => {
@@ -152,7 +156,7 @@ if ('serviceWorker' in navigator) {
 
 }
 
-deleteChatDiv.addEventListener("click", () => {
+deleteChat.addEventListener("click", () => {
 
     conversationHistory = [];
 
