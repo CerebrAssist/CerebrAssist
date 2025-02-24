@@ -130,7 +130,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 14px;
+    padding: 0 14px 10px 14px;
     border-radius: 14px;
 }
 
