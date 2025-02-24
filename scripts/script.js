@@ -2,11 +2,11 @@ import { marked } from 'https://cdn.jsdelivr.net/npm/marked@15.0.7/+esm'
 import dompurify from 'https://cdn.jsdelivr.net/npm/dompurify@3.2.4/+esm'
 import Cerebras from 'https://cdn.jsdelivr.net/npm/@cerebras/cerebras_cloud_sdk/+esm';
 
-const deleteChat = document.getElementById("deleteChat");
+const deleteButton = document.getElementById("deleteButton");
 
 const messagesContainer = document.getElementById('messagesContainer');
 
-const userInput = document.getElementById('userInput');
+const input = document.getElementById('input');
 
 const sendButton = document.getElementById('sendButton');
 
@@ -42,7 +42,7 @@ function parseMarkdown(text) {
 
 async function sendMessage() {
 
-    const userMessage = userInput.value;
+    const userMessage = input.value;
 
     if (!userMessage || !storedApiKey) return;
 
@@ -50,9 +50,9 @@ async function sendMessage() {
 
     addMessage('user', userMessage);
 
-    userInput.value = '';
+    input.value = '';
 
-    userInput.style.height = 'auto';
+    input.style.height = 'auto';
 
     const responseElement = addMessage('assistant', '');
 
@@ -112,7 +112,7 @@ function addMessage(role, content) {
 
 }
 
-userInput.addEventListener('input', function () {
+input.addEventListener('input', function () {
 
     this.style.height = 'auto';
 
@@ -120,7 +120,7 @@ userInput.addEventListener('input', function () {
 
 });
 
-userInput.addEventListener('keydown', (e) => {
+input.addEventListener('keydown', (e) => {
 
     if (e.key === 'Enter' && !e.shiftKey) {
 
@@ -156,7 +156,7 @@ if ('serviceWorker' in navigator) {
 
 }
 
-deleteChat.addEventListener("click", () => {
+deleteButton.addEventListener("click", () => {
 
     conversationHistory = [];
 

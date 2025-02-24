@@ -36,14 +36,6 @@ header {
     cursor: pointer;
 }
 
-.headerButton:hover {
-    background-color: light-dark(#E9ECEF, #343A40);
-}
-
-.headerButton:active {
-    opacity: 50%;
-}
-
 .logo {
     height: 34px;
 }
@@ -104,7 +96,6 @@ footer {
 .inputContainer {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 14px;
     width: 100%;
     padding: 10px 14px;
@@ -112,20 +103,21 @@ footer {
     background-color: light-dark(#E9ECEF, #343A40);
 }
 
-#userInput {
+.input {
     width: 100%;
     max-height: 200px;
     resize: none;
 }
 
-.button {
-    display: none;
-    justify-content: end;
-    align-items: center;
-    white-space: nowrap;
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
-#sendButton {
+.button {
+    height: 34px;
+    transform: scaleY(-1);
     cursor: pointer;
 }
 
@@ -180,8 +172,16 @@ ul, ol {
         border-radius: 14px 14px 0 0;
     }
 
-    .button {
-        display: flex;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .headerButton:hover {
+        background-color: light-dark(#E9ECEF, #343A40);
+    }
+
+    .button:hover {
+        opacity: 50%;
     }
 
 }
