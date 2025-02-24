@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, blockquote, figure, dl, dd {
-    margin: 0;
-}
-
 ul[role='list'], ol[role='list'] {
     list-style: none;
 }
@@ -22,29 +18,7 @@ button, input, textarea, select {
     color: inherit;
     border: none;
     background: none;
-    padding: 0;
-    margin: 0;
     appearance: none;
-}
-
-body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-}
-
-img, picture {
-    max-width: 100%;
-    display: block;
-}
-
-svg {
-    fill: currentColor;
-    display: block;
-}
-
-video {
-    display: block;
-    max-width: 100%;
 }
 
 :focus {
@@ -57,17 +31,6 @@ video {
 
 [hidden] {
     display: none !important;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-}
-
-th, td {
-    text-align: left;
-    padding: 0.5rem;
 }
 
 input, textarea, select, button {
