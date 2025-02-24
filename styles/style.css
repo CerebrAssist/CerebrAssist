@@ -103,10 +103,9 @@ footer {
 
 .inputContainer {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
     width: 100%;
     padding: 10px 14px;
     border-radius: 14px;
@@ -123,7 +122,7 @@ footer {
     display: none;
     justify-content: end;
     align-items: center;
-    width: 100%;
+    white-space: nowrap;
 }
 
 #sendButton {
