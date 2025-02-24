@@ -44,6 +44,10 @@ header {
     opacity: 50%;
 }
 
+.test {
+    height: 34px;
+}
+
 /* ----- MAIN ----- */
 
 main {
