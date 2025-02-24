@@ -1,3 +1,7 @@
+:root {
+    color-scheme: light dark;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -5,10 +9,9 @@ body {
     align-items: center;
     width: 100vw;
     height: 100vh;
-    padding: 0 8px 8px 8px;
     overflow-wrap: anywhere;
-    color: #212529;
-    background-color: #F8F9FA;
+    color: light-dark(#212529, #F8F9FA);
+    background-color: light-dark(#F8F9FA, #212529);
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.6;
@@ -28,46 +31,39 @@ main {
     flex-direction: column;
     width: 750px;
     height: 100%;
-    padding: 8px 12px;
+    padding: 10px 14px;
     overflow-y: auto;
     scrollbar-width: none;
 }
 
-.messages {
+#messagesContainer {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 24px;
     width: 100%;
     height: fit-content;
-    padding: 22px 0;
+    padding: 14px 0;
 }
 
 .message {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    border-radius: 12px;
+    justify-content: center;
+    gap: 14px;
+    width: fit-content;
+    padding: 10px 0;
 }
 
 .user {
-    display: flex;
-    justify-content: center;
     align-items: end;
     max-width: 80%;
-    width: fit-content;
     margin-left: auto;
-    padding: 8px 12px;
-    background-color: #E9ECEF;
 }
 
 .assistant {
-    display: flex;
-    justify-content: center;
     align-items: start;
     max-width: 100%;
-    width: fit-content;
     margin-right: auto;
-    padding: 8px 0;
 }
 
 /* ----- FOOTER ----- */
@@ -75,6 +71,7 @@ main {
 footer {
     width: 750px;
     height: fit-content;
+    padding-bottom: 10px;
 }
 
 .inputContainer {
@@ -82,9 +79,9 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 8px 12px;
-    border-radius: 12px;
-    background-color: #E9ECEF;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background-color: light-dark(#E9ECEF, #343A40);
 }
 
 #userInput {
@@ -95,20 +92,25 @@ footer {
 
 /* ----- MARKDOWN ----- */
 
-pre {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 4px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    background-color: #E9ECEF;
+code {
+    padding: 4px 6px;
+    border-radius: 6px;
+    background-color: light-dark(#E9ECEF, #343A40);
+    font-size: 14px;
 }
 
-code {
-    padding: 2px 4px;
-    border-radius: 4px;
-    background-color: #E9ECEF;
-    font-size: 14px;
+pre {
+    width: 100%;
+    padding: 14px;
+    border-left: 4px solid light-dark(#E9ECEF, #343A40);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+pre code {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
 }
 
 ul, ol {
@@ -117,11 +119,7 @@ ul, ol {
 
 /* ----- RESPONSIVE ----- */
 
-@media (max-width: 766px) {
-
-    body {
-        padding: 0;
-    }
+@media (max-width: 770px) {
 
     header {
         width: 100%;
@@ -133,37 +131,11 @@ ul, ol {
 
     footer {
         width: 100%;
+        padding-bottom: 0;
     }
 
     .inputContainer {
-        border-radius: 12px 12px 0 0;
-    }
-
-}
-
-/* ----- COLOR THEME ----- */
-
-@media (prefers-color-scheme: dark) {
-
-    body {
-        color: #F8F9FA;
-        background-color: #212529;
-    }
-
-    .user {
-        background-color: #343A40;
-    }
-
-    .inputContainer {
-        background-color: #343A40;
-    }
-
-    pre {
-        background-color: #343A40;
-    }
-
-    code {
-        background-color: #343A40;
+        border-radius: 14px 14px 0 0;
     }
 
 }
