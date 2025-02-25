@@ -6,7 +6,9 @@ const deleteButton = document.getElementById("deleteButton");
 
 const messagesContainer = document.getElementById('messagesContainer');
 
-const input = document.getElementById('input');
+const buttonContainer = document.querySelector('.buttonContainer');
+
+const userInput = document.getElementById('userInput');
 
 const sendButton = document.getElementById('sendButton');
 
@@ -42,7 +44,7 @@ function parseMarkdown(text) {
 
 async function sendMessage() {
 
-    const userMessage = input.value;
+    const userMessage = userInput.value;
 
     if (!userMessage || !storedApiKey) return;
 
@@ -50,9 +52,11 @@ async function sendMessage() {
 
     addMessage('user', userMessage);
 
-    input.value = '';
+    userInput.value = '';
 
-    input.style.height = 'auto';
+    userInput.style.height = 'auto';
+
+    buttonContainer.classList.remove('expanded');
 
     const responseElement = addMessage('assistant', '');
 
@@ -112,15 +116,19 @@ function addMessage(role, content) {
 
 }
 
-input.addEventListener('input', function () {
+userInput.addEventListener('userInput', function () {
 
     this.style.height = 'auto';
 
-    this.style.height = Math.min(this.scrollHeight, 200) + 'px';
+    const newHeight = Math.min(this.scrollHeight, 200);
+
+    this.style.height = newHeight + 'px';
+
+    buttonContainer.classList.toggle('expanded', newHeight > 54);
 
 });
 
-input.addEventListener('keydown', (e) => {
+userInput.addEventListener('keydown', (e) => {
 
     if (e.key === 'Enter' && !e.shiftKey) {
 
