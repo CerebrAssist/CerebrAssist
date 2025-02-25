@@ -84,8 +84,6 @@ async function sendMessage() {
 
             responseElement.innerHTML = parseMarkdown(responseText);
 
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
         }
 
         conversationHistory.push({ role: 'assistant', content: responseText });
