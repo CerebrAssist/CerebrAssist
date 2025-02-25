@@ -30,10 +30,25 @@ header {
     padding: 10px 0;
 }
 
-.headerButton {
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding: 10px 14px;
     border-radius: 14px;
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #7AC74F;
 }
 
 .logo {
@@ -180,12 +195,24 @@ ul, ol {
 
 @media (hover: hover) and (pointer: fine) {
 
-    .headerButton:hover {
+    .button:hover {
         background-color: light-dark(#E9ECEF, #343A40);
     }
 
+    .button:hover span, .button:hover .indicator {
+        opacity: 80%;
+    }
+
+    .button:active {
+        opacity: 20%;
+    }
+
     .sendButton:hover {
-        opacity: 50%;
+        opacity: 80%;
+    }
+
+    .sendButton:active {
+        opacity: 20%;
     }
 
 }

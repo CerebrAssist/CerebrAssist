@@ -12,21 +12,17 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="manifest" href="pwa/manifest.json">
     <title>CerebrAssist</title>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "CerebrAssist",
-            "url": "https://cerebrassist.tech",
-            "logo": "https://cerebrassist.tech/assets/192x192.png"
-        }
-    </script>
 </head>
 <body>
     <header>
-        <div class="headerButton"><a href="https://github.com/CerebrAssist/CerebrAssist" target="_blank">Repo Github</a></div>
+        <div id="statusButton" class="button">
+            <span>Online</span>
+            <div class="indicator"></div>
+        </div>
         <img class="logo" src="assets/logo.svg" alt="logo">
-        <div id="deleteButton" class="headerButton">Delete chat</div>
+        <div id="deleteButton" class="button">
+            <span>Delete chat</span>
+        </div>
     </header>
     <main>
         <div id="messagesContainer"></div>
