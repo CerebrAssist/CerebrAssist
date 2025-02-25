@@ -55,6 +55,7 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    width: 34px;
     height: 34px;
 }
 
@@ -141,6 +142,7 @@ footer {
 }
 
 .sendButton {
+    width: 34px;
     height: 34px;
     transform: scaleY(-1);
     cursor: pointer;
