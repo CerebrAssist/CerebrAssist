@@ -116,7 +116,7 @@ function addMessage(role, content) {
 
 }
 
-userInput.addEventListener('userInput', function () {
+userInput.addEventListener('input', function () {
 
     this.style.height = 'auto';
 
