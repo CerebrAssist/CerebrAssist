@@ -169,3 +169,9 @@ deleteButton.addEventListener("click", () => {
     messagesContainer.innerHTML = '';
 
 });
+
+window.addEventListener("load", function() {
+    document.body.classList.remove("loading");
+    const preloader = document.getElementById("preloader");
+    if(preloader) preloader.style.display = 'none';
+});
