@@ -1,6 +1,35 @@
-:root {
-    color-scheme: light dark;
+/* ----- FONTS ----- */
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/Inter-VariableFont.ttf') format('truetype-variations');
+    font-weight: 100 700;
+    font-style: normal;
+    font-display: swap;
+    font-optical-sizing: auto;
 }
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/Inter-Italic-VariableFont.ttf') format('truetype-variations');
+    font-weight: 100 700;
+    font-style: italic;
+    font-display: swap;
+    font-optical-sizing: auto;
+}
+
+/* ----- COLORS ----- */
+
+:root {
+    --background-light: #F8F9FA;
+    --background-dark: #212529;
+    --accent-light: #E9ECEF;
+    --accent-dark: #343A40;
+    --text-light: #212529;
+    --text-dark: #F8F9FA;
+}
+
+/* ----- BODY ----- */
 
 html, body {
     width: 100%;
@@ -13,8 +42,8 @@ body {
     justify-content: center;
     align-items: center;
     overflow-wrap: anywhere;
-    color: light-dark(#212529, #F8F9FA);
-    background-color: light-dark(#F8F9FA, #212529);
+    color: var(--text);
+    background-color: var(--background);
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.6;
@@ -98,7 +127,7 @@ main {
     margin-left: auto;
     padding: 10px 14px;
     border-radius: 14px 14px 4px 14px;
-    background-color: light-dark(#E9ECEF, #343A40);
+    background-color: var(--accent);
 }
 
 .assistant {
@@ -122,7 +151,7 @@ footer {
     width: 100%;
     padding: 10px 14px;
     border-radius: 14px;
-    background-color: light-dark(#E9ECEF, #343A40);
+    background-color: var(--accent);
 }
 
 .userInput {
@@ -153,14 +182,14 @@ footer {
 code {
     padding: 4px;
     border-radius: 4px;
-    background-color: light-dark(#E9ECEF, #343A40);
+    background-color: var(--accent);
     font-size: 14px;
 }
 
 pre {
     width: 100%;
     padding: 14px;
-    border-left: 4px solid light-dark(#E9ECEF, #343A40);
+    border-left: 4px solid var(--accent);
     overflow-x: auto;
     scrollbar-width: none;
     line-height: 1.4;
@@ -176,14 +205,14 @@ ul, ol {
     list-style-position: inside;
 }
 
-/* ----- RESPONSIVE ----- */
+/* ----- MEDIA QUERY ----- */
 
 @media (max-width: 770px) {
 
     header {
         width: 100%;
         padding: 10px 14px;
-        border-bottom: 1px solid light-dark(#E9ECEF, #343A40);
+        border-bottom: 1px solid var(--accent);
     }
 
     main {
@@ -205,7 +234,7 @@ ul, ol {
 @media (hover: hover) and (pointer: fine) {
 
     .button:hover {
-        background-color: light-dark(#E9ECEF, #343A40);
+        background-color: var(--accent);
     }
 
     .button:hover span, .button:hover .indicator {
@@ -222,6 +251,26 @@ ul, ol {
 
     .sendButton:active {
         opacity: 20%;
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+
+    :root {
+        --background: var(--background-light);
+        --accent: var(--accent-light);
+        --text: var(--text-light);
+    }
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --background: var(--background-dark);
+        --accent: var(--accent-dark);
+        --text: var(--text-dark);
     }
 
 }
