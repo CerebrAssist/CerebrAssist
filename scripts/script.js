@@ -169,23 +169,3 @@ deleteButton.addEventListener("click", () => {
     messagesContainer.innerHTML = '';
 
 });
-
-Promise.all([
-    // Attendre que toutes les ressources (images, scripts, etc.) soient chargées
-    new Promise(resolve => window.addEventListener('load', resolve)),
-    // Attendre que toutes les polices soient chargées
-    document.fonts.ready,
-    // Ici, tu peux ajouter d'autres promesses si nécessaire, par exemple :
-    // fetch('/some/async/data').then(res => res.json())
-]).then(() => {
-    // Tout est bien chargé, on retire le preloader
-    document.body.classList.remove("loading");
-    const preloader = document.getElementById("preloader");
-    if (preloader) {
-        // Optionnel : ajouter une transition pour masquer le preloader en douceur
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
-    }
-});

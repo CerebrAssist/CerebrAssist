@@ -20,21 +20,6 @@ body {
     line-height: 1.6;
 }
 
-/* ----- LOADING ----- */
-
-body.loading > *:not(#preloader) {
-    display: none;
-}
-
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
 /* ----- HEADER ----- */
 
 header {
