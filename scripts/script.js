@@ -38,7 +38,13 @@ function parseMarkdown(text) {
 
     const rawHTML = marked(text);
 
-    return dompurify.sanitize(rawHTML);
+    const cleanHTML = dompurify.sanitize(rawHTML, {
+
+        FORBID_ATTR: ['style']
+
+    });
+
+    return cleanHTML;
 
 }
 
