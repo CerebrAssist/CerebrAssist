@@ -6,9 +6,9 @@ const deleteButton = document.getElementById("deleteButton");
 
 const messagesContainer = document.getElementById('messagesContainer');
 
-const buttonContainer = document.querySelector('.buttonContainer');
-
 const userInput = document.getElementById('userInput');
+
+const sendButtonContainer = document.getElementById('sendButtonContainer');
 
 const sendButton = document.getElementById('sendButton');
 
@@ -62,7 +62,7 @@ async function sendMessage() {
 
     userInput.style.height = 'auto';
 
-    buttonContainer.classList.remove('expanded');
+    sendButtonContainer.classList.remove('expanded');
 
     const responseElement = addMessage('assistant', '');
 
@@ -128,7 +128,7 @@ userInput.addEventListener('input', function () {
 
     this.style.height = newHeight + 'px';
 
-    buttonContainer.classList.toggle('expanded', newHeight > 54);
+    sendButtonContainer.classList.toggle('expanded', newHeight > 54);
 
 });
 

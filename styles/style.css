@@ -40,7 +40,15 @@ header {
     padding: 10px 0;
 }
 
-.button {
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 34px;
+}
+
+.deleteButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,21 +60,6 @@ header {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-}
-
-.indicator {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: #7AC74F;
-}
-
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 34px;
-    height: 34px;
 }
 
 /* ----- MAIN ----- */
@@ -81,7 +74,7 @@ main {
     scrollbar-width: none;
 }
 
-#messagesContainer {
+.messagesContainer {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -141,13 +134,13 @@ footer {
     resize: none;
 }
 
-.buttonContainer {
+.sendButtonContainer {
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
 
-.buttonContainer.expanded {
+.sendButtonContainer.expanded {
     align-items: flex-end;
 }
 
@@ -214,24 +207,20 @@ ul, ol {
 
 @media (hover: hover) and (pointer: fine) {
 
-    .button:hover {
+    .deleteButton:hover {
         background-color: var(--accent);
-    }
-
-    .button:hover span, .button:hover .indicator {
-        opacity: 80%;
-    }
-
-    .button:active {
-        opacity: 20%;
     }
 
     .sendButton:hover {
         opacity: 80%;
     }
 
+    .deleteButton:active {
+        opacity: 40%;
+    }
+
     .sendButton:active {
-        opacity: 20%;
+        opacity: 40%;
     }
 
 }
